@@ -1,4 +1,4 @@
-def toyou(x):
+def hello(x):
     return "hello %s" % x
 def add(x):
     return x + 1
