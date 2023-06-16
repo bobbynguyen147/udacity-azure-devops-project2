@@ -3,7 +3,7 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-from sklearn.externals import joblib
+import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -18,10 +18,9 @@ def scale(payload):
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
 
-#GET_PASSES_THIS_REPO_UDACITY_PLEASE 
 @app.route("/")
 def home():
-    html = "<h2> Sklearn Prediction Home APP - REST API - Huy edit this</h2>"    
+    html = "<h3>Sklearn Prediction Home V2.0</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -54,9 +53,10 @@ def predict():
     { "prediction": [ 20.35373177134412 ] }
 
     """
-
     try:
-        clf = joblib.load("boston_housing_prediction.joblib")
+        #clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
+        clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
+        # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
     except:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
