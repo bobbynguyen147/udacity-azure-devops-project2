@@ -10,16 +10,16 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '48d052eb-8c38-4c5a-acf6-78398b0bdfec'
+  azureServiceConnectionId: 'udacity'
 
   # Web app name
-  webAppName: 'bobby-udacity1'
+  webAppName: 'bobby-udacity-pythonapp'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'bobby-udacity1'
+  environmentName: 'bobby-udacity-pythonapp'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
