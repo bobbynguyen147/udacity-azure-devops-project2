@@ -41,7 +41,7 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
-        source /home/devopsagent/venv
+        source /home/devopsagent/venv/bin/activate
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
       
