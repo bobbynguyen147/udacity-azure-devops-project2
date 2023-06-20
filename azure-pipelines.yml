@@ -41,13 +41,11 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
-        python -m venv venv
-        source venv/bin/activate
+        source /home/devopsagent/venv
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
       
     - script: |
-        export PATH=$HOME/.local/bin:$PATH
         python --version
         ls
         pwd
