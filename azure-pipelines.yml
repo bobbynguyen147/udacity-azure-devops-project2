@@ -41,8 +41,8 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
+        python -m venv venv
+        source venv/bin/activate
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
       
