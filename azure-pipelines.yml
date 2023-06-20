@@ -55,7 +55,7 @@ stages:
         ls
         pwd
         which pylint
-        make all
+        make test
       workingDirectory: $(projectRoot)
       displayName: 'Run lint tests'   
 
