@@ -51,6 +51,7 @@ stages:
         python --version
         ls
         pwd
+        pip install Flask==1.0.2
         make all
       workingDirectory: $(projectRoot)
       displayName: 'Run lint tests'   
