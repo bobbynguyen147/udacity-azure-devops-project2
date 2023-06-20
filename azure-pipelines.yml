@@ -46,6 +46,7 @@ stages:
       displayName: "Install requirements"
       
     - script: |
+        export PATH=$HOME/.local/bin:$PATH
         python --version
         ls
         pwd
