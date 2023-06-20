@@ -13,13 +13,13 @@ variables:
   azureServiceConnectionId: 'udacity'
 
   # Web app name
-  webAppName: 'bobby-udacity-pythonapp'
+  webAppName: 'bobby-udacity-pythonapp1'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'bobby-udacity-pythonapp'
+  environmentName: 'bobby-udacity-pythonapp1'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -89,7 +89,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : bobbynguyen-pythonapp'
+            displayName: 'Deploy Azure Web App : bobbynguyen-pythonapp1'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
