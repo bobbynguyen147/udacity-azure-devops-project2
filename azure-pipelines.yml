@@ -24,8 +24,8 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.8
-  pythonVersion: '3.8'
+  # Python version: 3.9
+  pythonVersion: '3.9'
 
 stages:
 - stage: Build
@@ -34,24 +34,11 @@ stages:
   - job: BuildJob
     pool:
       myAgentPool
-    steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
-
-    - script: |
-        source /home/devopsagent/venv/bin/activate
-      workingDirectory: $(projectRoot)
-      displayName: "Install requirements"
-      
+    steps:      
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         python --version
-        ls
         pwd
-        pip show --files pylint
-        echo $PATH
         which pylint
         make all
       workingDirectory: $(projectRoot)
