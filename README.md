@@ -20,16 +20,14 @@ A [spreadsheet](project-schedule-h.xlsx) has been created to manage the project 
 ## Instructions
 
 Here is an architectural diagram:
-![arch diagram](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/architechture-diagram.png)
-
+![architechture-diagram.png](Screenshot%2Farchitechture-diagram.png)
 ## Deploy the app in Azure Cloud Shell
 
 In Azure Cloud Shell, clone the repo:
 ```
 git clone git@github.com:bobbynguyen147/udacity-azure-devops-project2.git
 ```
-![screenshot-gitClone-AzureCloud](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/git-clone.png)
-
+![git-clone.png](Screenshot%2Fgit-clone.png)
 Create a virtual environment:
 ```
 python -m venv ~/.AzureDevops
@@ -49,12 +47,11 @@ Install dependencies in the virtual environment and run tests:
 ```
 make all
 ```
-![make-all](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/make-all1.png)
-![make-all2](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/make-all2.png)
+![make-all1.png](Screenshot%2Fmake-all1.png)
+![make-all2.png](Screenshot%2Fmake-all2.png)
 
 A successful GitHub build test 
-![screenshot-build-success-actiongithub](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/ci.png)
-
+![ci.png](Screenshot%2Fci.png)
 ## Deploy the app to an Azure App Service
 
 Create an App Service in Azure. In this example the App Service is cicd-nanodegree-haneen and the resource group is flask-app, you can either create it using Azure cloudShell or the portal itself.
@@ -73,16 +70,14 @@ Next, create the pipeline in Azure DevOps. More information on this process can 
 
 Screenshot of the App Service in Azure:
 
-![screenshot-webapp-service](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/webapp.png)
+![webapp.png](Screenshot%2Fwebapp.png)
 
 Screenshot of config devops pipeline agent:
-![screenshot-azure-pipeline-agent-pool](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/agent-pool.png)
-![screenshot-azure-pipeline-agent-config](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/agent-config.png)
-
+![agent-pool.png](Screenshot%2Fagent-pool.png)
+![agent-config.png](Screenshot%2Fagent-config.png)
 Screenshot of a successful deployment of the project in Azure Pipelines:
 
-![screenshot-azure-pipeline-deployment](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/cd.png)
-
+![cd.png](Screenshot%2Fcd.png)
 To test the app running in Azure App Service, edit line 28 of the make_predict_azure_app.sh script with the DNS name of your app. Then run the script:
 ```
 ./make_predict_azure_app.sh 
@@ -90,13 +85,11 @@ To test the app running in Azure App Service, edit line 28 of the make_predict_a
 
 If it's working you should see the following output:
 
-![screenshot-prediction](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/predict.png)
-
+![predict.png](Screenshot%2Fpredict.png)
 You can also visit the URL of the App Service via the browser and you should see the following page:
 
-![screenshot-browser](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/app-url.png)
+![app-url.png](Screenshot%2Fapp-url.png)
 
-> 
 
 ## Enhancements
 Improving the model performance.
@@ -119,12 +112,10 @@ Start locust:
 locust
 ```
 Open a browser and go to [http://localhost:8089](http://localhost:8089). Enter the total number of users to simulate, spawn rate, set the host to your <app-service>, and click Start Swarming:
-
-![screenshot-loadtest](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/locust-config.png)
+![locust-config.png](Screenshot%2Flocust-config.png)
 
 You can then watch the load test:
-
-![screenshot-locust](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/locust.png)
+![locust.png](Screenshot%2Flocust.png)
 
 ## Demo 
 Youtube video demo
