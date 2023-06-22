@@ -52,6 +52,8 @@ make all
 
 A successful GitHub build test 
 ![ci.png](Screenshot%2Fci.png)
+[![CI](https://github.com/bobbynguyen147/udacity-azure-devops-project2/actions/workflows/main.yml/badge.svg?branch=ci)](https://github.com/bobbynguyen147/udacity-azure-devops-project2/actions/workflows/main.yml)
+
 ## Deploy the app to an Azure App Service
 
 Create an App Service in Azure. In this example the App Service is cicd-nanodegree-haneen and the resource group is flask-app, you can either create it using Azure cloudShell or the portal itself.
