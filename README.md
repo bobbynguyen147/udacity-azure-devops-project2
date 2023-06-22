@@ -1,6 +1,6 @@
 # Overview
 
-Hello there, I am Huy, this is project building a CI/CD Pipeline for 'DevOps Engineer for Microsoft Azure' program from Udacity.
+Hello there, I am Long(Bobby), this is project building a CI/CD Pipeline for 'DevOps Engineer for Microsoft Azure' program from Udacity.
 
 This project consists of flask application that is developed to predict housing prices in Boston (the model is already created by the instructor). 
 
@@ -13,26 +13,26 @@ Once anything has been changed (commits) in the github repositry, it will trigge
 
 ## Project Plan
 
-A [Trello](https://trello.com/b/CSY4dyDy/building-a-ci-cd-pipeline-udacity) board has been created to keep track of the tasks.
+A [Trello](https://trello.com/b/8fbVJFdr/udacity-devops-azure-project2) board has been created to keep track of the tasks.
 
 A [spreadsheet](project-schedule-h.xlsx) has been created to manage the project schedule.
 
 ## Instructions
 
 Here is an architectural diagram:
-![arch diagram](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/ArchitechturalDiagram.PNG)
+![arch diagram](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/architechture-diagram.png)
 
 ## Deploy the app in Azure Cloud Shell
 
 In Azure Cloud Shell, clone the repo:
 ```
-git clone git@github.com:huytnq/Azure_Devops_Udacity_Project2.git
+git clone git@github.com:bobbynguyen147/udacity-azure-devops-project2.git
 ```
-![screenshot-gitClone-AzureCloud](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Clone_Project.PNG)
+![screenshot-gitClone-AzureCloud](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/git-clone.png)
 
 Create a virtual environment:
 ```
-python3 -m venv ~/.AzureDevops
+python -m venv ~/.AzureDevops
 ```
 
 Activate the virtual environment:
@@ -42,20 +42,18 @@ source ~/.AzureDevops/bin/activate
 
 Change into the new directory:
 ```
-cd Azure_Devops_Udacity_Project2
+cd udacity-azure-devops-project2
 ```
 
 Install dependencies in the virtual environment and run tests:
 ```
 make all
 ```
-![make-all](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All.PNG)
-![make-all2](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All2.PNG)
-![make-all3](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All3.PNG)
-![make-all4](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All4.PNG)
+![make-all](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/make-all1.png)
+![make-all2](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/make-all2.png)
 
 A successful GitHub build test 
-![screenshot-build-success-actiongithub](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Github_CI_Build.PNG)
+![screenshot-build-success-actiongithub](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/ci.png)
 
 ## Deploy the app to an Azure App Service
 
@@ -63,7 +61,7 @@ Create an App Service in Azure. In this example the App Service is cicd-nanodegr
 In the Azure cloudShell type:
 
 ```
-az webapp up -n bobbynguyen-pythonapp -location eastus
+az webapp up --name bobbynguyen-pythonapp1 --sku FREE --location eastus --runtime "PYTHON|3.9" --resource-group Azuredevops
 ```
 
 Next, create the pipeline in Azure DevOps. More information on this process can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops&WT.mc_id=udacity_learn-wwl). The basic steps to set up the pipeline are:
@@ -75,11 +73,15 @@ Next, create the pipeline in Azure DevOps. More information on this process can 
 
 Screenshot of the App Service in Azure:
 
-![screenshot-webapp-service](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Service.PNG)
+![screenshot-webapp-service](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/webapp.png)
+
+Screenshot of config devops pipeline agent:
+![screenshot-azure-pipeline-agent-pool](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/agent-pool.png)
+![screenshot-azure-pipeline-agent-config](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/agent-config.png)
 
 Screenshot of a successful deployment of the project in Azure Pipelines:
 
-![screenshot-azure-pipeline-deployment](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Azure_Pipelines.PNG)
+![screenshot-azure-pipeline-deployment](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/cd.png)
 
 To test the app running in Azure App Service, edit line 28 of the make_predict_azure_app.sh script with the DNS name of your app. Then run the script:
 ```
@@ -88,19 +90,11 @@ To test the app running in Azure App Service, edit line 28 of the make_predict_a
 
 If it's working you should see the following output:
 
-![screenshot-prediction](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_Predict.PNG)
+![screenshot-prediction](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/predict.png)
 
 You can also visit the URL of the App Service via the browser and you should see the following page:
 
-![screenshot-browser](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Service_URL.PNG)
-
-View the app logs:
-
-in the browser bar type: https://bobbynguyen-pythonapp.scm.azurewebsites.net/api/logs/docker
-
-
-![screenshot-log-webapp](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Logs.PNG)
-
+![screenshot-browser](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/app-url.png)
 
 > 
 
@@ -126,16 +120,15 @@ locust
 ```
 Open a browser and go to [http://localhost:8089](http://localhost:8089). Enter the total number of users to simulate, spawn rate, set the host to your <app-service>, and click Start Swarming:
 
-![screenshot-loadtest](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Lotus_Config.PNG)
+![screenshot-loadtest](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/locust-config.png)
 
 You can then watch the load test:
 
-![screenshot-locust](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Lotus_Load_Test.PNG)
+![screenshot-locust](https://raw.githubusercontent.com/bobbynguyen147/udacity-azure-devops-project2/main/Screenshot/locust.png)
 
-## GET_PASSES_THIS_REPO_UDACITY_PLEASE 
 ## Demo 
-Youtube video demo 
-https://www.youtube.com/watch?v=s3KX6pqJj8A&ab_channel=HuyTNQ
+Youtube video demo
+https://youtu.be/zOpJrOEBC4c
 
 
 
